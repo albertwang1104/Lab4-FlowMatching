@@ -372,18 +372,9 @@ python -m task4_instaflow.evaluate_instaflow \
   --save_dir results/instaflow_eval
 ```
 
-**Step 4: Sample (ONE STEP!)**
+**Step 4: Measure FID**
 ```bash
-python -m image_common.sampling \
-  --use_cfg \
-  --ckpt_path results/instaflow-XXX/last.ckpt \
-  --save_dir results/instaflow_samples \
-  --num_inference_steps 1
-```
-
-**Step 5: Measure FID**
-```bash
-python -m fid.measure_fid data/afhq/eval results/instaflow_samples
+python -m fid.measure_fid data/afhq/eval results/instaflow_eval/instaflow_1step
 ```
 
 #### 📊 Deliverables
