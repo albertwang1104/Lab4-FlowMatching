@@ -83,7 +83,13 @@ class SimpleNet(nn.Module):
 
         ######## TODO ########
         # DO NOT change the code outside this part.
-
+        # Apply a time-conditioned linear layer at each hidden width.
+        widths = [dim_in, *dim_hids]
+        self.layers = nn.ModuleList(
+            TimeLinear(widths[i], widths[i + 1], num_timesteps)
+            for i in range(len(dim_hids))
+        )
+        self.output = nn.Linear(widths[-1], dim_out)
         ######################
         
     def forward(self, x: torch.Tensor, t: torch.Tensor):
@@ -97,6 +103,9 @@ class SimpleNet(nn.Module):
         """
         ######## TODO ########
         # DO NOT change the code outside this part.
-
+        # Predict the 2D flow velocity from the sample and its time embedding.
+        for layer in self.layers:
+            x = F.silu(layer(x, t))
+        x = self.output(x)
         ######################
         return x

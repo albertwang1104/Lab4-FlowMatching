@@ -73,10 +73,14 @@ class InstaFlowModel(nn.Module):
         # 5. If using LPIPS, add perceptual loss
         #    LPIPS expects inputs in [-1, 1] range
 
-        t_zero = None  # TODO: create t=0 tensor
-        v_pred = None  # TODO: get predicted velocity
-        x1_pred = None  # TODO: compute predicted image
-        l2_loss = None  # TODO: compute MSE loss
+        # The student learns the full noise-to-image displacement at t=0.
+        t_zero = torch.zeros(x0.shape[0], device=x0.device, dtype=x0.dtype)
+        if class_label is not None:
+            v_pred = self.network(x0, t_zero, class_label=class_label)
+        else:
+            v_pred = self.network(x0, t_zero)
+        x1_pred = x0 + v_pred
+        l2_loss = (x1_pred - x1).pow(2).mean()
 
         # Combine L2 + LPIPS loss
         if self.use_lpips:
@@ -118,10 +122,14 @@ class InstaFlowModel(nn.Module):
         #
         # 4. Calculate the final image: x_1 = x_0 + v_pred
         
-        x_0 = None  # TODO: set initial noise
-        t_zero = None  # TODO: create t=0 tensor
-        v_pred = None  # TODO: get predicted velocity
-        x_1 = None  # TODO: compute final image
+        # A single velocity prediction carries the guidance learned from the teacher.
+        x_0 = x_T
+        t_zero = torch.zeros(x_0.shape[0], device=x_0.device, dtype=x_0.dtype)
+        if class_label is not None:
+            v_pred = self.network(x_0, t_zero, class_label=class_label)
+        else:
+            v_pred = self.network(x_0, t_zero)
+        x_1 = x_0 + v_pred
         ######################
 
         return x_1
