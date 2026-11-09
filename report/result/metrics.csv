@@ -1,0 +1,10 @@
+task,model,steps,time_seconds,samples_per_second,speedup,fid,image_count,source_dir,copied_dir
+task3,Base FM,5,14.594046115875244,34.26054680313128,,,500,/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5,task3/base_fm_steps5
+task3,Base FM,10,28.45022940635681,17.574550730627216,,,500,/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10,task3/base_fm_steps10
+task3,Base FM,20,56.845630407333374,8.795750815272822,,,500,/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20,task3/base_fm_steps20
+task3,1-Rectified Flow,5,14.21078085899353,35.18455494889759,1.026970034981516,,500,/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5,task3/rectified_1_steps5
+task3,1-Rectified Flow,10,28.45263171195984,17.573066880482234,0.9999155682459413,,500,/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10,task3/rectified_1_steps10
+task3,1-Rectified Flow,20,56.85737919807434,8.793933295063557,0.9997933638358526,,500,/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20,task3/rectified_1_steps20
+task4,1-RF Teacher (20 steps),20,48.41276717185974,10.32785418410515,1.0,,500,/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps,task4/2rf_20steps
+task4,InstaFlow (1 step),1,1.2273623943328857,407.3776435620446,39.44455801758026,,500,/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step,task4/instaflow_1step
+task2,task2/cfg7.5_steps20,,,,,,500,/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20,task2/cfg7.5_steps20

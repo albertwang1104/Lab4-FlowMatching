@@ -1,0 +1,36 @@
+{
+  "Base FM": {
+    "5": {
+      "time": 14.594046115875244,
+      "samples_per_sec": 34.26054680313128,
+      "save_dir": "results/evaluation/base_fm_steps5"
+    },
+    "10": {
+      "time": 28.45022940635681,
+      "samples_per_sec": 17.574550730627216,
+      "save_dir": "results/evaluation/base_fm_steps10"
+    },
+    "20": {
+      "time": 56.845630407333374,
+      "samples_per_sec": 8.795750815272822,
+      "save_dir": "results/evaluation/base_fm_steps20"
+    }
+  },
+  "1-Rectified Flow": {
+    "5": {
+      "time": 14.21078085899353,
+      "samples_per_sec": 35.18455494889759,
+      "save_dir": "results/evaluation/rectified_1_steps5"
+    },
+    "10": {
+      "time": 28.45263171195984,
+      "samples_per_sec": 17.573066880482234,
+      "save_dir": "results/evaluation/rectified_1_steps10"
+    },
+    "20": {
+      "time": 56.85737919807434,
+      "samples_per_sec": 8.793933295063557,
+      "save_dir": "results/evaluation/rectified_1_steps20"
+    }
+  }
+}

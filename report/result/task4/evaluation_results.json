@@ -1,0 +1,16 @@
+{
+  "1-RF Teacher (20 steps)": {
+    "steps": 20,
+    "time": 48.41276717185974,
+    "samples_per_sec": 10.32785418410515,
+    "speedup": 1.0,
+    "save_dir": "results/instaflow_eval/2rf_20steps"
+  },
+  "InstaFlow (1 step)": {
+    "steps": 1,
+    "time": 1.2273623943328857,
+    "samples_per_sec": 407.3776435620446,
+    "speedup": 39.44455801758026,
+    "save_dir": "results/instaflow_eval/instaflow_1step"
+  }
+}

@@ -148,7 +148,7 @@ class AFHQDataModule(object):
         self.num_classes = self.train_ds.num_classes
 
     def _download_dataset(self):
-        URL = "https://www.dropbox.com/s/t9l9o3vsx2jai3z/afhq.zip?dl=0"
+        URL = "https://www.dropbox.com/s/t9l9o3vsx2jai3z/afhq.zip?dl=1"
         ZIP_FILE = f"./{self.root}/afhq.zip"
         os.system(f"mkdir -p {self.root}")
         os.system(f"wget -N {URL} -O {ZIP_FILE}")

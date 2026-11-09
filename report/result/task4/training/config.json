@@ -1,0 +1,15 @@
+{
+  "gpu": 0,
+  "distill_data_path": "data/afhq_instaflow",
+  "batch_size": 16,
+  "train_num_steps": 100000,
+  "warmup_steps": 5000,
+  "log_interval": 200,
+  "lr": 0.0002,
+  "seed": 63,
+  "use_cfg": true,
+  "cfg_dropout": 0.0,
+  "use_lpips": false,
+  "grad_clip": 1.0,
+  "device": "cuda:0"
+}

@@ -1,0 +1,531 @@
+{
+  "sources": {
+    "task1_notebook": "/workspace/WYH/Lab4-FlowMatching/task1_2d_flow_matching/fm_tutorial.ipynb",
+    "task2_run": "/workspace/WYH/Lab4-FlowMatching/results/cfg_fm-11-06-104650",
+    "task3_run": "/workspace/WYH/Lab4-FlowMatching/results/rectified_fm_1-11-08-151923",
+    "task4_run": "/workspace/WYH/Lab4-FlowMatching/results/instaflow-11-09-051330",
+    "task3_evaluation": "/workspace/WYH/Lab4-FlowMatching/results/evaluation",
+    "task4_evaluation": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval"
+  },
+  "files": [
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/task1_2d_flow_matching/fm_tutorial.ipynb#cell-2",
+      "output": "task1/cell_02_1.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/task1_2d_flow_matching/fm_tutorial.ipynb#cell-6",
+      "output": "task1/cell_06_1.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/task1_2d_flow_matching/fm_tutorial.ipynb#cell-8",
+      "output": "task1/cell_08_1.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/task1_2d_flow_matching/fm_tutorial.ipynb#cell-8",
+      "output": "task1/cell_08_2.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/cfg_fm-11-06-104650/loss.png",
+      "output": "task2/training/loss.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/cfg_fm-11-06-104650/config.json",
+      "output": "task2/training/config.json"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/cfg_fm-11-06-104650/step=99800-0.png",
+      "output": "task2/training/samples/step=99800-0.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/cfg_fm-11-06-104650/step=99800-1.png",
+      "output": "task2/training/samples/step=99800-1.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/cfg_fm-11-06-104650/step=99800-2.png",
+      "output": "task2/training/samples/step=99800-2.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/cfg_fm-11-06-104650/step=99800-3.png",
+      "output": "task2/training/samples/step=99800-3.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/rectified_fm_1-11-08-151923/loss.png",
+      "output": "task3/training/loss.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/rectified_fm_1-11-08-151923/config.json",
+      "output": "task3/training/config.json"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/rectified_fm_1-11-08-151923/step=99800-0.png",
+      "output": "task3/training/samples/step=99800-0.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/rectified_fm_1-11-08-151923/step=99800-1.png",
+      "output": "task3/training/samples/step=99800-1.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/rectified_fm_1-11-08-151923/step=99800-2.png",
+      "output": "task3/training/samples/step=99800-2.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/rectified_fm_1-11-08-151923/step=99800-3.png",
+      "output": "task3/training/samples/step=99800-3.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow-11-09-051330/loss.png",
+      "output": "task4/training/loss.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow-11-09-051330/config.json",
+      "output": "task4/training/config.json"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow-11-09-051330/step=99800-0.png",
+      "output": "task4/training/samples/step=99800-0.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow-11-09-051330/step=99800-1.png",
+      "output": "task4/training/samples/step=99800-1.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow-11-09-051330/step=99800-2.png",
+      "output": "task4/training/samples/step=99800-2.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow-11-09-051330/step=99800-3.png",
+      "output": "task4/training/samples/step=99800-3.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/evaluation_results.json",
+      "output": "task3/evaluation_results.json"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/sampling_time_comparison.png",
+      "output": "task3/sampling_time_comparison.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0000.png",
+      "output": "task3/base_fm_steps5/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0001.png",
+      "output": "task3/base_fm_steps5/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0002.png",
+      "output": "task3/base_fm_steps5/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0003.png",
+      "output": "task3/base_fm_steps5/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0004.png",
+      "output": "task3/base_fm_steps5/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0005.png",
+      "output": "task3/base_fm_steps5/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0006.png",
+      "output": "task3/base_fm_steps5/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5/sample_0007.png",
+      "output": "task3/base_fm_steps5/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0000.png",
+      "output": "task3/base_fm_steps10/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0001.png",
+      "output": "task3/base_fm_steps10/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0002.png",
+      "output": "task3/base_fm_steps10/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0003.png",
+      "output": "task3/base_fm_steps10/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0004.png",
+      "output": "task3/base_fm_steps10/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0005.png",
+      "output": "task3/base_fm_steps10/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0006.png",
+      "output": "task3/base_fm_steps10/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10/sample_0007.png",
+      "output": "task3/base_fm_steps10/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0000.png",
+      "output": "task3/base_fm_steps20/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0001.png",
+      "output": "task3/base_fm_steps20/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0002.png",
+      "output": "task3/base_fm_steps20/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0003.png",
+      "output": "task3/base_fm_steps20/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0004.png",
+      "output": "task3/base_fm_steps20/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0005.png",
+      "output": "task3/base_fm_steps20/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0006.png",
+      "output": "task3/base_fm_steps20/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20/sample_0007.png",
+      "output": "task3/base_fm_steps20/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0000.png",
+      "output": "task3/rectified_1_steps5/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0001.png",
+      "output": "task3/rectified_1_steps5/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0002.png",
+      "output": "task3/rectified_1_steps5/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0003.png",
+      "output": "task3/rectified_1_steps5/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0004.png",
+      "output": "task3/rectified_1_steps5/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0005.png",
+      "output": "task3/rectified_1_steps5/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0006.png",
+      "output": "task3/rectified_1_steps5/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5/sample_0007.png",
+      "output": "task3/rectified_1_steps5/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0000.png",
+      "output": "task3/rectified_1_steps10/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0001.png",
+      "output": "task3/rectified_1_steps10/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0002.png",
+      "output": "task3/rectified_1_steps10/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0003.png",
+      "output": "task3/rectified_1_steps10/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0004.png",
+      "output": "task3/rectified_1_steps10/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0005.png",
+      "output": "task3/rectified_1_steps10/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0006.png",
+      "output": "task3/rectified_1_steps10/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10/sample_0007.png",
+      "output": "task3/rectified_1_steps10/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0000.png",
+      "output": "task3/rectified_1_steps20/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0001.png",
+      "output": "task3/rectified_1_steps20/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0002.png",
+      "output": "task3/rectified_1_steps20/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0003.png",
+      "output": "task3/rectified_1_steps20/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0004.png",
+      "output": "task3/rectified_1_steps20/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0005.png",
+      "output": "task3/rectified_1_steps20/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0006.png",
+      "output": "task3/rectified_1_steps20/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20/sample_0007.png",
+      "output": "task3/rectified_1_steps20/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/evaluation_results.json",
+      "output": "task4/evaluation_results.json"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_comparison.png",
+      "output": "task4/instaflow_comparison.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0000.png",
+      "output": "task4/2rf_20steps/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0001.png",
+      "output": "task4/2rf_20steps/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0002.png",
+      "output": "task4/2rf_20steps/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0003.png",
+      "output": "task4/2rf_20steps/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0004.png",
+      "output": "task4/2rf_20steps/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0005.png",
+      "output": "task4/2rf_20steps/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0006.png",
+      "output": "task4/2rf_20steps/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps/sample_0007.png",
+      "output": "task4/2rf_20steps/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0000.png",
+      "output": "task4/instaflow_1step/sample_0000.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0001.png",
+      "output": "task4/instaflow_1step/sample_0001.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0002.png",
+      "output": "task4/instaflow_1step/sample_0002.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0003.png",
+      "output": "task4/instaflow_1step/sample_0003.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0004.png",
+      "output": "task4/instaflow_1step/sample_0004.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0005.png",
+      "output": "task4/instaflow_1step/sample_0005.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0006.png",
+      "output": "task4/instaflow_1step/sample_0006.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step/sample_0007.png",
+      "output": "task4/instaflow_1step/sample_0007.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/0.png",
+      "output": "task2/cfg7.5_steps20/0.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/1.png",
+      "output": "task2/cfg7.5_steps20/1.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/10.png",
+      "output": "task2/cfg7.5_steps20/10.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/100.png",
+      "output": "task2/cfg7.5_steps20/100.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/101.png",
+      "output": "task2/cfg7.5_steps20/101.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/102.png",
+      "output": "task2/cfg7.5_steps20/102.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/103.png",
+      "output": "task2/cfg7.5_steps20/103.png"
+    },
+    {
+      "source": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20/104.png",
+      "output": "task2/cfg7.5_steps20/104.png"
+    }
+  ],
+  "metrics": [
+    {
+      "task": "task3",
+      "model": "Base FM",
+      "steps": 5,
+      "time_seconds": 14.594046115875244,
+      "samples_per_second": 34.26054680313128,
+      "speedup": "",
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps5",
+      "copied_dir": "task3/base_fm_steps5"
+    },
+    {
+      "task": "task3",
+      "model": "Base FM",
+      "steps": 10,
+      "time_seconds": 28.45022940635681,
+      "samples_per_second": 17.574550730627216,
+      "speedup": "",
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps10",
+      "copied_dir": "task3/base_fm_steps10"
+    },
+    {
+      "task": "task3",
+      "model": "Base FM",
+      "steps": 20,
+      "time_seconds": 56.845630407333374,
+      "samples_per_second": 8.795750815272822,
+      "speedup": "",
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/base_fm_steps20",
+      "copied_dir": "task3/base_fm_steps20"
+    },
+    {
+      "task": "task3",
+      "model": "1-Rectified Flow",
+      "steps": 5,
+      "time_seconds": 14.21078085899353,
+      "samples_per_second": 35.18455494889759,
+      "speedup": 1.026970034981516,
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps5",
+      "copied_dir": "task3/rectified_1_steps5"
+    },
+    {
+      "task": "task3",
+      "model": "1-Rectified Flow",
+      "steps": 10,
+      "time_seconds": 28.45263171195984,
+      "samples_per_second": 17.573066880482234,
+      "speedup": 0.9999155682459413,
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps10",
+      "copied_dir": "task3/rectified_1_steps10"
+    },
+    {
+      "task": "task3",
+      "model": "1-Rectified Flow",
+      "steps": 20,
+      "time_seconds": 56.85737919807434,
+      "samples_per_second": 8.793933295063557,
+      "speedup": 0.9997933638358526,
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/evaluation/rectified_1_steps20",
+      "copied_dir": "task3/rectified_1_steps20"
+    },
+    {
+      "task": "task4",
+      "model": "1-RF Teacher (20 steps)",
+      "steps": 20,
+      "time_seconds": 48.41276717185974,
+      "samples_per_second": 10.32785418410515,
+      "speedup": 1.0,
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/2rf_20steps",
+      "copied_dir": "task4/2rf_20steps"
+    },
+    {
+      "task": "task4",
+      "model": "InstaFlow (1 step)",
+      "steps": 1,
+      "time_seconds": 1.2273623943328857,
+      "samples_per_second": 407.3776435620446,
+      "speedup": 39.44455801758026,
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/instaflow_eval/instaflow_1step",
+      "copied_dir": "task4/instaflow_1step"
+    },
+    {
+      "task": "task2",
+      "model": "task2/cfg7.5_steps20",
+      "steps": "",
+      "time_seconds": "",
+      "samples_per_second": "",
+      "speedup": "",
+      "fid": null,
+      "image_count": 500,
+      "source_dir": "/workspace/WYH/Lab4-FlowMatching/results/task2_cfg7.5_steps20",
+      "copied_dir": "task2/cfg7.5_steps20"
+    }
+  ],
+  "training_steps": {
+    "task2": 99800,
+    "task3": 99800,
+    "task4": 99800
+  },
+  "missing": [
+    "FID for task3/base_fm_steps5 (--fid-log task3/base_fm_steps5=FILE)",
+    "FID for task3/base_fm_steps10 (--fid-log task3/base_fm_steps10=FILE)",
+    "FID for task3/base_fm_steps20 (--fid-log task3/base_fm_steps20=FILE)",
+    "FID for task3/rectified_1_steps5 (--fid-log task3/rectified_1_steps5=FILE)",
+    "FID for task3/rectified_1_steps10 (--fid-log task3/rectified_1_steps10=FILE)",
+    "FID for task3/rectified_1_steps20 (--fid-log task3/rectified_1_steps20=FILE)",
+    "FID for task4/2rf_20steps (--fid-log task4/2rf_20steps=FILE)",
+    "FID for task4/instaflow_1step (--fid-log task4/instaflow_1step=FILE)",
+    "FID for task2/cfg7.5_steps20 (--fid-log task2/cfg7.5_steps20=FILE)"
+  ],
+  "task1_chamfer_distance": 18.1275
+}
