@@ -22,7 +22,11 @@ If omitted, the script chooses the most recently modified `cfg_fm-*`,
 `rectified_fm_1-*`, and `instaflow-*` directories. For evaluation, it reads
 `evaluation_results.json` and copies the sample directories named there.
 Add one `--sample-dir TASK/LABEL=DIR` for each extra image condition, such as
-Task 2 CFG scales or inference step counts. The notebook must have saved cell
+Task 2 CFG scales or inference step counts. This must point to a dedicated
+inference output directory with numbered images (`0.png`, `1.png`, ...), not a
+training run directory containing `loss.png` and `step=...png`. On rerun, the
+script removes only files it previously copied for the same sample label.
+The notebook must have saved cell
 outputs to contribute Task 1 figures and Chamfer Distance.
 
 The FID program prints its result but does not save it. Save each measurement

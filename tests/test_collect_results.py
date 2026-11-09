@@ -8,6 +8,43 @@ from report.collect_results import collect_results
 
 
 class CollectResultsTests(unittest.TestCase):
+    def test_rejects_training_run_as_inference_sample_directory(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            run = root / "results" / "cfg_fm-example"
+            run.mkdir(parents=True)
+            (run / "loss.png").write_bytes(b"loss")
+            (run / "step=200-0.png").write_bytes(b"training sample")
+            output = root / "report" / "results"
+
+            with self.assertRaisesRegex(ValueError, "inference sample directory"):
+                collect_results(root, output,
+                                sample_dirs=[("task2/cfg7.5_steps20", run)])
+            self.assertFalse(output.exists())
+
+    def test_replaces_only_previously_collected_samples_on_rerun(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "results" / "task2_samples"
+            source.mkdir(parents=True)
+            (source / "0.png").write_bytes(b"new sample")
+            (source / "loss.png").write_bytes(b"wrong image")
+            output = root / "report" / "results"
+            destination = output / "task2" / "cfg7.5_steps20"
+            destination.mkdir(parents=True)
+            (destination / "loss.png").write_bytes(b"old copied loss")
+            (destination / "personal.png").write_bytes(b"user image")
+            (output / "manifest.json").write_text(json.dumps({"files": [
+                {"source": "old", "output": "task2/cfg7.5_steps20/loss.png"}
+            ]}))
+
+            collect_results(root, output,
+                            sample_dirs=[("task2/cfg7.5_steps20", source)])
+
+            self.assertEqual((destination / "0.png").read_bytes(), b"new sample")
+            self.assertFalse((destination / "loss.png").exists())
+            self.assertTrue((destination / "personal.png").exists())
+
     def test_extracts_saved_notebook_figure_and_chamfer_distance(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

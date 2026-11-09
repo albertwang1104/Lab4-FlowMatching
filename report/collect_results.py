@@ -17,6 +17,7 @@ FIELDS = ("task", "model", "steps", "time_seconds", "samples_per_second",
           "speedup", "fid", "image_count", "source_dir", "copied_dir")
 FID_RE = re.compile(r"\bFID\s*:\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)")
 STEP_RE = re.compile(r"step=(\d+)-(\d+)\.png$")
+INFERENCE_IMAGE_RE = re.compile(r"(?:\d+|sample_\d+)\.(?:png|jpg|jpeg)$", re.IGNORECASE)
 
 
 def source_path(root, path):
@@ -43,11 +44,13 @@ def images_in(directory):
                   if path.is_file() and path.suffix.lower() in (".png", ".jpg", ".jpeg"))
 
 
-def samples(source, destination, limit, output, manifest):
+def samples(source, destination, limit, output, manifest, inference_only=False):
     if not source.is_dir():
         manifest["missing"].append(f"Sample directory: {source}")
         return 0
     images = images_in(source)
+    if inference_only:
+        images = [path for path in images if INFERENCE_IMAGE_RE.fullmatch(path.name)]
     for path in images[:limit]:
         copy(path, destination / path.name, output, manifest)
     if not images:
@@ -193,12 +196,40 @@ def write_indexes(output, manifest):
     (output / "README.md").write_text("\n".join(lines) + "\n")
 
 
+def remove_previous_copies(output, label):
+    """Remove only files this script previously copied into this sample label."""
+    manifest_file = output / "manifest.json"
+    if not manifest_file.is_file():
+        return
+    previous = json.loads(manifest_file.read_text())
+    for item in previous.get("files", []):
+        path = safe_label(item["output"])
+        if path.parent == label:
+            copied = output / path
+            if copied.is_file():
+                copied.unlink()
+
+
 def collect_results(root, output, *, task1_notebook=None, task2_run=None,
                     task3_run=None, task4_run=None, task3_eval=None, task4_eval=None,
                     sample_dirs=(), fid_logs=(), max_samples=8):
     root, output = Path(root).resolve(), Path(output).resolve()
     if max_samples < 1:
         raise ValueError("max_samples must be positive")
+    validated_samples = []
+    for label, directory in sample_dirs:
+        part = safe_label(label)
+        if part.parts[0] not in ("task2", "task3", "task4"):
+            raise ValueError(f"Sample label must start with task2/, task3/, or task4/: {label}")
+        source = source_path(root, directory)
+        if source.is_dir():
+            images = images_in(source)
+            if images and not any(INFERENCE_IMAGE_RE.fullmatch(path.name) for path in images):
+                raise ValueError(
+                    f"Expected an inference sample directory with numbered PNGs, got: {source}. "
+                    "Run python -m image_common.sampling with --save_dir pointing to a separate directory."
+                )
+        validated_samples.append((part, source))
     output.mkdir(parents=True, exist_ok=True)
     manifest = {"sources": {}, "files": [], "metrics": [], "training_steps": {}, "missing": []}
     fids = fid_values(root, fid_logs, manifest)
@@ -209,12 +240,11 @@ def collect_results(root, output, *, task1_notebook=None, task2_run=None,
     for task, directory in (("task3", task3_eval), ("task4", task4_eval)):
         evaluation(root, source_path(root, directory) if directory else None,
                    task, max_samples, output, fids, manifest)
-    for label, directory in sample_dirs:
-        part = safe_label(label)
-        if part.parts[0] not in ("task2", "task3", "task4"):
-            raise ValueError(f"Sample label must start with task2/, task3/, or task4/: {label}")
-        source = source_path(root, directory)
-        count = samples(source, output / part, max_samples, output, manifest)
+    for part, source in validated_samples:
+        label = str(part)
+        remove_previous_copies(output, part)
+        count = samples(source, output / part, max_samples, output, manifest,
+                        inference_only=True)
         fid = fids.get(label)
         if fid is None:
             manifest["missing"].append(f"FID for {label} (--fid-log {label}=FILE)")
